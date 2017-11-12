@@ -161,7 +161,7 @@
                     </security>
                 </datasource>
 				<datasource jndi-name="java:jboss/datasources/CadastroClienteDS" pool-name="CadastroClienteDS" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:mysql://localhost/clientes?useSSL=false</connection-url>
+                    <connection-url>jdbc:mysql://localhost/cadastrodb?useSSL=false</connection-url>
                     <driver>mysql</driver>
                     <pool>
                         <min-pool-size>2</min-pool-size>
