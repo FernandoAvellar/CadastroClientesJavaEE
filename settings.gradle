@@ -1,0 +1,1 @@
+include "cadastro-ear", "cadastro-war", "cadastro-api", "cadastro-impl", "cadastro-ejb", "cadastro-ejb-client"

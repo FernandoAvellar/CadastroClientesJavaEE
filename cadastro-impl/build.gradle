@@ -1,0 +1,4 @@
+dependencies {
+	compile project(':cadastro-api')
+	compile project(':cadastro-ejb-client')
+}

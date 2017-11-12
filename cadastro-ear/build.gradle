@@ -1,0 +1,23 @@
+apply plugin: 'ear'
+
+dependencies {
+	deploy project(path: ':cadastro-war', configuration: 'archives')
+	deploy project(path: ':cadastro-ejb')
+	earlib project(':cadastro-api')
+	earlib project(':cadastro-impl')
+	earlib project(':cadastro-ejb-client')
+}
+
+ear {
+	deploymentDescriptor {
+		def warName = project(':cadastro-war').name
+		def warVersion = project(':cadastro-war').version
+		def warFileName = warName + '-' + warVersion + '.war'
+		webModule(warFileName, 'cadastro')
+		
+		def ejbName = project(':cadastro-ejb').name
+		def ejbVersion = project(':cadastro-ejb').version
+		def ejbFileName = ejbName + '-' + ejbVersion + '.jar'
+		module(ejbFileName, 'ejb')
+	}
+}
