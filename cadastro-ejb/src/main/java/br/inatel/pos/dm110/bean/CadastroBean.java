@@ -49,6 +49,9 @@ public class CadastroBean implements CadastroRemoto, CadastroLocal
         EntidadeCliente entidadeCliente = new EntidadeCliente(cliente.getNome(), cliente.getEmail());
         clienteDAO.inserir(entidadeCliente);
 
+        //TODO: Ainda retornando ID=0 após enviar o Post - Investigar!
+        cliente.setId(entidadeCliente.getId());
+
         return cliente;
     }
 
