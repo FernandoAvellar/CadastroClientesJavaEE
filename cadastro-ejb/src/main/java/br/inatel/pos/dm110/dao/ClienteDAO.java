@@ -6,20 +6,23 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import br.inatel.pos.dm110.entidades.Cliente;
+import br.inatel.pos.dm110.entidades.EntidadeCliente;
 
 @Stateless
-public class ClienteDAO {
+public class ClienteDAO
+{
 
-	@PersistenceContext(unitName = "cadastrodb")
-	private EntityManager em;
+    @PersistenceContext (unitName = "cadastrodb")
+    private EntityManager em;
 
-	public List<Cliente> listarTodosClientes() {
-		return em.createQuery("from Cliente c", Cliente.class).getResultList();
-	}
+    public List<EntidadeCliente> listarTodosClientes()
+    {
+        return em.createQuery("from EntidadeCliente c", EntidadeCliente.class).getResultList();
+    }
 
-	public void inserir(Cliente cliente) {
-		em.persist(cliente);
-	}
+    public void inserir(EntidadeCliente cliente)
+    {
+        em.persist(cliente);
+    }
 
 }

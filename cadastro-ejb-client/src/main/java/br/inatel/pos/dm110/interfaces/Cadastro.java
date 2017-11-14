@@ -2,10 +2,13 @@ package br.inatel.pos.dm110.interfaces;
 
 import java.util.List;
 
-public interface Cadastro {
+import br.inatel.pos.dm110.modelo.Cliente;
 
-	List<String> listarClientes();
+public interface Cadastro
+{
 
-	void cadastrarNovoCliente(String nome, String email);
+    List<Cliente> listarClientes();
+
+    Cliente cadastrarNovoCliente(Cliente cliente);
 
 }
